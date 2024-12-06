@@ -23,28 +23,3 @@ with open("input.txt", "r") as f:
         if valid:
             valids.append(update)
     print(sum([i[len(i)//2] for i in valids]))
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # for update in updates:
-    #     print(update)
-    #     valid = True
-    #     for index, item in enumerate(update):
-    #         if item in rules:
-    #             if not bool(set(update[:index]) & set(rules[item])):
-    #                 valid = False
-    #         if not bool(set(update[index-1:]) & set([i for i in rules if item in rules[i]])):
-    #             valid = False
-    #     if valid:
-    #         valids.append(update)
-    # print(valids) 
-            
-    # key by value in list: list([i for i in rules if search in rules[i]])
-    
