@@ -8,17 +8,17 @@ def validate(a, b, increasing):
         return b < a and (a - b) <= 3
 
 def analyze(elements):
-    # Determine trend and validate the sequence
-    increasing = elements[0] < elements[1]  # Initial trend
+    
+    increasing = elements[0] < elements[1]  #
     for i in range(1, len(elements)):
         if not validate(elements[i-1], elements[i], increasing):
             return False
     return True
 
 def compute(report):
-    if analyze(report):  # Check the original sequence
+    if analyze(report):  
         return True
-    for i in range(len(report)):  # Try removing each element once
+    for i in range(len(report)):  
         new_report = remove_item(report, i)
         if analyze(new_report):
             return True
