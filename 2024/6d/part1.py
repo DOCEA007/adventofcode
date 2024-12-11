@@ -1,10 +1,14 @@
 def rotate(matrix):
     return list(list(x) for x in zip(*matrix))[::-1]
-def rotate_coordinates(x, y, n):
-    # Rotate coordinates 90 degrees counterclockwise n times
+def rotate_coordinates(x, y, row, n):
+    new_x = x
+    new_y = y
     for _ in range(n):
-        x, y = y, -x
-    return x, y
+        new_x, new_y = len(row)-1-new_y, new_x
+    return new_x,new_y
+
+
+    
 def step(matrix):
     rows = len(matrix)
     cols = len(matrix[0])
