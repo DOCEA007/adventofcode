@@ -36,6 +36,7 @@ with open("input.txt") as f:
     rotations = 0
     sus = True
     visited = set()
+    visited.add("s")
     while sus:
         printm(data)       
         for i_row in range(1, rows):
@@ -45,7 +46,7 @@ with open("input.txt") as f:
                     moved = False
                     for k in range(i_row - 1, -1, -1):
                         # print(k)
-                        original_k, original_i_col = rotate_coordinates(k, i_col, rotations)
+                        original_k, original_i_col = rotate_coordinates(k, i_col,data[i_row],  rotations)
                         visited.add((original_k, original_i_col))
                         if data[k][i_col] == "#":
                             # Move ^ to the position just below #
@@ -58,6 +59,8 @@ with open("input.txt") as f:
                         # Move ^ to the top row
                         data[i_row][i_col] = "."
                         data[0][i_col] = "^"
+                        for i in range(i_row, 0, -1):
+                            visited.add((i, i_col))
                         sus = False
                         print("ZAZAAAA")
         
